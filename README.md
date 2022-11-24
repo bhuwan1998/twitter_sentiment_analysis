@@ -1,2 +1,14 @@
 # twitter_sentiment_analysis
-Elon's Tweets analysed against Tesla Stock
+### Data Retrieval 
+
+### Data Processing Brief 
+
+### Sentiment Value Processing 
+
+### Sentiment vs Stock Timeseries 
+
+### Findings 
+
+
+
+
