@@ -3,6 +3,7 @@ import pandas as pd
 from os import listdir 
 from datetime import date, datetime, timedelta
 import snscrape.modules.twitter as sntwitter 
+import yfinance as yf
 
 
 class data_ret(): 
@@ -35,6 +36,11 @@ class data_ret():
         temp_df.to_csv(f'{twitter_user}_.csv')
 
 
+class stock_data():
+
+    def get_stock_data(self, stock_name, start, end): 
+        data = yf.download(tickers = stock_name, start=start, end=end, interval='1h')
+        return data 
 
 
 ## Testing 
