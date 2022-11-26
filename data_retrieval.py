@@ -40,15 +40,19 @@ class stock_data():
 
     def get_stock_data(self, stock_name, start, end): 
         data = yf.download(tickers = stock_name, start=start, end=end, interval='1h')
-        return data 
+        data.to_csv("stock_data.csv")
 
 
 ## Testing 
 new = data_ret()
 start_date = datetime(2021, 10, 31)
 end_date = datetime(2022, 4, 30) 
-date_range = new.date_range(start_date, end_date)
+# date_range = new.date_range(start_date, end_date)
 
 
-df = new.get_tweets('elonmusk', start_date, end_date, 1000)
+# df = new.get_tweets('elonmusk', start_date, end_date, 1000)
+
+stock = stock_data()
+
+stock.get_stock_data('TSLA', start_date, end_date)
 
