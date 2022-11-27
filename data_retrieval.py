@@ -30,10 +30,11 @@ class data_ret():
         for i, tweet in enumerate(sntwitter.TwitterSearchScraper(f'from:{twitter_user} since:{start.date()} until:{end.date()}').get_items()):
             if i > max_tweets: 
                 break
-            tweets_list.append([tweet.date, tweet.id, tweet.content, tweet.user.username])
+            if("@" not in tweet.content):
+                tweets_list.append([tweet.date, tweet.id, tweet.content, tweet.user.username])
         
         temp_df = pd.DataFrame(tweets_list, columns=['Datetime', 'Tweet ID', 'Text', 'Username'])
-        temp_df.to_csv(f'{twitter_user}_.csv')
+        temp_df.to_csv(f'{twitter_user}_{start.date()}.csv')
 
 
 class stock_data():
@@ -44,13 +45,14 @@ class stock_data():
 
 
 ## Testing 
+## March 25, 2022 - Starting of Elon's Twitter Criticism - Check effect on the stock
 new = data_ret()
-start_date = datetime(2021, 10, 31)
-end_date = datetime(2022, 4, 30) 
+start_date = datetime(2021, 11, 26)
+end_date = datetime(2022, 11, 26) 
 # date_range = new.date_range(start_date, end_date)
 
 
-# df = new.get_tweets('elonmusk', start_date, end_date, 1000)
+# new.get_tweets('elonmusk', start_date, end_date, 5000)
 
 stock = stock_data()
 
