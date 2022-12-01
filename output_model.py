@@ -4,11 +4,6 @@ import re
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-import torch
-from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
-from sklearn.model_selection import train_test_split
-from transformers import BertTokenizer, TFBertForSequenceClassification
-from transformers import InputExample, InputFeatures
 from re import sub
 
 from tabulate import tabulate
