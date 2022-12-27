@@ -27,14 +27,14 @@ class data_ret():
     def get_tweets(self, twitter_user, start, end, max_tweets):
         ## get tweets based on the user
         tweets_list = [] 
-        for i, tweet in enumerate(sntwitter.TwitterSearchScraper(f'from:{twitter_user} since:{start.date()} until:{end.date()}').get_items()):
+        for i, tweet in enumerate(sntwitter.TwitterSearchScraper(f'from:{twitter_user} since:{start} until:{end}').get_items()):
             if i > max_tweets: 
                 break
             if("@" not in tweet.content):
                 tweets_list.append([tweet.date, tweet.id, tweet.content, tweet.user.username])
         
         temp_df = pd.DataFrame(tweets_list, columns=['Datetime', 'Tweet ID', 'Text', 'Username'])
-        temp_df.to_csv(f'{twitter_user}_{start.date()}.csv')
+        temp_df.to_csv(f'{twitter_user}_{start}.csv')
 
 
 class stock_data():
@@ -49,12 +49,13 @@ class stock_data():
 new = data_ret()
 start_date = datetime(2021, 11, 26)
 end_date = datetime(2022, 11, 26) 
-# date_range = new.date_range(start_date, end_date)
+date_range = new.date_range(start_date, end_date)
 
-
+for start, end in date_range: 
+    new.get_tweets('elonmusk', start, end, 5000)
 # new.get_tweets('elonmusk', start_date, end_date, 5000)
 
-stock = stock_data()
+# stock = stock_data()
 
-stock.get_stock_data('TSLA', start_date, end_date)
+# stock.get_stock_data('TSLA', start_date, end_date)
 
