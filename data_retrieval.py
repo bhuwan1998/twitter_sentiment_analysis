@@ -48,11 +48,11 @@ class stock_data():
 ## March 25, 2022 - Starting of Elon's Twitter Criticism - Check effect on the stock
 new = data_ret()
 start_date = datetime(2021, 11, 26)
-end_date = datetime(2022, 11, 26) 
+end_date = datetime(2023, 4, 26) 
 date_range = new.date_range(start_date, end_date)
 
 for start, end in date_range: 
-    new.get_tweets('elonmusk', start, end, 5000)
+    new.get_tweets('elonmusk', start, end, 100)
 # new.get_tweets('elonmusk', start_date, end_date, 5000)
 
 # stock = stock_data()
