@@ -1,5 +1,5 @@
 # Twitter Sentiment Analyis 
-## Finding a correlation between Tesla Stock and Elon Musk's Tweets (Started Januray 2023 - Ended August 2023)
+## Finding a correlation between Tesla Stock and Elon Musk's Tweets 
 ### Data Retrieval 
 - Tweets were retrieved with open source third party scraper which no longer works as twitter/X has blocked all third party scrapers. 
 - Tesla Stock Data was retrieved using yahoo finance python library.
