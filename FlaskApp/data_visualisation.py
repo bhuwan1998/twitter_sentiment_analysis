@@ -8,7 +8,9 @@ import base64
 
 app = Flask(__name__)
 
-csv_data = "../Data/Final_Merged_Data.csv"
+csv_data = "../Data/Final_Merged_Data.csv" # Place holder for the main CSV for the final predicted model 
+# using the k fold cross validation 
+
 
 # Function to generate the graph and return it as a base64 encoded image 
 def generate_plot(): 
