@@ -1,4 +1,4 @@
-# Twitter Sentiment Analyis
+# [Twitter Sentiment Analyis](https://bhuwanbansal.com/blog/update-on-project/)
 
 ## Finding a correlation between Tesla Stock and Elon Musk's Tweets (Started Januray 2023 - Ended August 2023)
 
